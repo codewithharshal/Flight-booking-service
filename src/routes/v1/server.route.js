@@ -1,8 +1,8 @@
 import express, { Router } from 'express';
-import serverContoller from '../../controllers/server.contoller.js';
+import serverController from '../../controllers/server.controller.js';
 
 const server = Router();
 
-server.get('/info', serverContoller.info);
+server.get('/info', serverController.info);
 
 export default server;

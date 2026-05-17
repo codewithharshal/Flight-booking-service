@@ -4,11 +4,10 @@ import v1Route from './routes/index.js';
 
 const app = express();
 
-app.use('/api', v1Route);
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
+app.use('/api', v1Route);
 
 app.listen(serverConfig.PORT, () => {
   console.log('Server running');
